@@ -1,18 +1,18 @@
 package Module2;
 
 public class Task2_3 {
-    static double withdrawBalance(String[] ownerName, double withdrawal, int[] balance) {
+    public static int[] balances = {1200, 100, 2000, 500, 3200};
+    static double withdrawBalance(String[] ownerName, double withdrawal) {
         String ownN = ownerName[0];
-        double bal = balance[0];
+        double bal;
         double wit = withdrawal;
         double res;
         res = wit * 0.05;
         for (int i = 0; i < ownerName.length; i++) {
             ownN = ownerName[3];
         }
-        for (int k = 0; k < balance.length; k++) {
-            bal = balance[3];
-        }
+        bal = balances[1];
+
         bal = bal - res - wit;
 
         System.out.print(ownN + " ");
@@ -23,10 +23,9 @@ public class Task2_3 {
     public static void main(String[] args) {
 
         String[] ownerNames = {"Jane", "Ann", "Jack", "Oww", "Lane"};
-        int[] balances = {1200, 100, 2000, 500, 3200};
-        int drawable = 490;
+        int drawable = 80;
 
-        double res1 = withdrawBalance(ownerNames, drawable, balances);
+        double res1 = withdrawBalance(ownerNames, drawable);
         if(res1 > 0) {
             System.out.println(res1 +" "+drawable);
         }
