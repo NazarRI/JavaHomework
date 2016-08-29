@@ -3,9 +3,7 @@ package Module2;
 public class Task2_3 {
     static double withdrawBalance(String[] ownerName, double withdrawal, int[] balance) {
         String ownN = ownerName[0];
-        String ownN1 = ownerName[0];
         double bal = balance[0];
-        double bal1 = balance[0];
         double wit = withdrawal;
         double res;
         res = wit * 0.05;
