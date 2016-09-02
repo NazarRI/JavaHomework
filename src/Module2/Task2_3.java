@@ -9,15 +9,16 @@ public class Task2_3 {
     private static double comission = 0.05;
 
     static double withdrawBalance(String ownerName, double withdrawal) {
-        String ownName = ownerNames[0];
         double balance = balances[0];
         double wit = withdrawal;
         double com = comission * wit;
-        for (int i = 0; i < ownerNames.length; i++){
-            if (ownerNames[i] == ownerName) balance = balances[i];
+        double bal = 0;
+        for (int i = 0; i < ownerNames.length; i++) {
+            if (ownerNames[i] == ownerName) {
+                balance = balances[i] - com - wit;
+            }
         }
-        balance = balance - com - wit;
-                return balance;
+        return balance;
     }
 
     public static void main(String[] args) {
