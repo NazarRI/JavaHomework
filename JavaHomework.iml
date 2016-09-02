@@ -1,11 +1,85 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<module type="JAVA_MODULE" version="4">
-  <component name="NewModuleRootManager" inherit-compiler-output="true">
-    <exclude-output />
-    <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
-    </content>
-    <orderEntry type="inheritedJdk" />
-    <orderEntry type="sourceFolder" forTests="false" />
-  </component>
-</module>
+package Module3.Task4;
+
+
+public class User {
+
+    private int salary;
+    private int balance;
+    private int monthsOfEmployment;
+    private String companyName;
+    private String name;
+    private String currency;
+
+    User(String name, String companyName) {
+        this.name = name;
+        this.companyName = companyName;
+    }
+
+    User(int balance, int salary, String currency) {
+        this.salary = salary;
+        this.currency = currency;
+        this.balance = balance;
+    }
+
+    User(int monthsOfEmployment) {
+        this.monthsOfEmployment = monthsOfEmployment;
+
+    }
+
+    public int getSalary() {
+        return salary;
+    }
+
+    public int getBalance() {
+        return balance;
+    }
+
+    public int getMonthsOfEmployment() {
+        return monthsOfEmployment;
+    }
+
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getCurrency() {
+        return currency;
+    }
+
+
+    void paySalary() {
+        System.out.println(getSalary() + getBalance());
+    }
+
+    int withdraw(int summ){
+       int comission;
+       int summOfWithrawal = summ;
+        if(summOfWithrawal <= 1000){
+            comission = (int) (summOfWithrawal * 0.05);
+        }
+        else{
+            comission = (int) (summOfWithrawal * 0.10);
+        }
+        return  getBalance() - summOfWithrawal - comission;
+    }
+
+   String companyNameLenfht(String companyName){
+        this.companyName = companyName;
+       return companyName;
+    }
+
+    /*int monthIncreaser(int addMonth){
+
+    }*/
+
+    public static void main(String[] args) {
+        User ob1 = new User("Bobi", "Frrrrrr");
+        User ob2 = new User(10000, 2000, "$");
+        User ob3 = new User(1);
+        //ob2.paySalary();
+        System.out.println(ob2.withdraw(2000));
+        System.out.println(ob1.companyNameLenfht(ob1.getCompanyName()));
