@@ -27,7 +27,7 @@ public class Task2_3 {
             System.out.println(ownerName + " " + withdrawal + " " + res1);
         }
         else{
-            System.out.println("NO");
+            System.out.println(ownerName + " NO");
         }
 
         String ownerName2 = "Oww";
