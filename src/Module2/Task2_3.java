@@ -10,12 +10,10 @@ public class Task2_3 {
 
     static double withdrawBalance(String ownerName, double withdrawal) {
         double balance = balances[0];
-        double wit = withdrawal;
-        double com = comission * wit;
-        double bal = 0;
+        double com = comission * withdrawal;
         for (int i = 0; i < ownerNames.length; i++) {
             if (ownerNames[i] == ownerName) {
-                balance = balances[i] - com - wit;
+                balance = balances[i] - com - withdrawal;
             }
         }
         return balance;
