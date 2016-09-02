@@ -13,8 +13,9 @@ public class Task2_3 {
         double balance = balances[0];
         double wit = withdrawal;
         double com = comission * wit;
-        for (int i = 0; i < ownerNames.length; i++)
+        for (int i = 0; i < ownerNames.length; i++){
             if (ownerNames[i] == ownerName) balance = balances[i];
+        }
         balance = balance - com - wit;
                 return balance;
     }
