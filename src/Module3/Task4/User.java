@@ -71,22 +71,4 @@ public class User {
         this.monthsOfEmployment += addMonth;
     }
 
-    public static void main(String[] args) {
-        User ob1 = new User("Bobi", "Frrrr", 10000, 2000, "$", 12);
-
-        ob1.paySalary();
-        System.out.println(ob1.getBalance());
-
-
-
-        ob1.companyNameLenfht();
-        System.out.println(ob1.getCompanyName());
-
-
-
-
-
-
-    }
-
 }
