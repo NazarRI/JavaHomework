@@ -51,16 +51,15 @@ public class User {
         this.balance += this.salary;
     }
 
-    int withdraw(int summ){
+    void withdraw(int summ){
        int comission;
-       int summOfWithrawal = summ;
-        if(summOfWithrawal < 1000){
-            comission = (int) (summOfWithrawal * 0.05);
+        if(summ < 1000){
+            comission = (int) (summ * 0.05);
         }
         else{
-            comission = (int) (summOfWithrawal * 0.10);
+            comission = (int) (summ * 0.10);
         }
-        return getBalance() - summOfWithrawal - comission;
+        this.balance = this.balance - summ - comission;
     }
 
    void companyNameLenfht(){
