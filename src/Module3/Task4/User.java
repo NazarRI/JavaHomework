@@ -62,8 +62,8 @@ public class User {
         this.balance = this.balance - summ - comission;
     }
 
-   void companyNameLenfht(){
-       int calcName = this.companyName.length();
+   int companyNameLenfht(){
+       return this.companyName.length();
    }
 
     void monthIncreaser(int addMonth){
