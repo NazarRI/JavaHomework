@@ -9,7 +9,8 @@ public class BankSystemImpl implements BankSystem {
         double balance, comission;
         if(user.getBank().getLimitOfWithdrawal() >= amount) {
             comission = user.getBank().getCommission(amount);
-            user.setBalance(balance = user.getBalance() - amount -comission);
+            balance = user.getBalance() - amount -comission;
+            user.setBalance(balance);
             System.out.println("withdrawOfUser " + balance + " "+ amount + " " + comission);
         }
         else {
@@ -23,7 +24,8 @@ public class BankSystemImpl implements BankSystem {
     public void fundUser(User user, int amount) {
         double b;
         if(user.getBank().getLimitOfFunding() >= amount){
-            user.setBalance(b = user.getBalance() + amount);
+            b = user.getBalance() + amount;
+            user.setBalance(b);
             System.out.println("fundUser " +b);
         }
         else{
@@ -36,8 +38,10 @@ public class BankSystemImpl implements BankSystem {
     public void transferMoney(User fromUser, User toUser, int amount) {
         if(fromUser.getBalance() >= amount){
             double a, b;
-            fromUser.setBalance(a = fromUser.getBalance() - amount);
-            toUser.setBalance(b = toUser.getBalance() + amount);
+            a = fromUser.getBalance() - amount;
+            b = toUser.getBalance() + amount;
+            fromUser.setBalance(a);
+            toUser.setBalance(b);
             System.out.println("transferMoney " + a + " " + b);
 
         }
@@ -47,7 +51,8 @@ public class BankSystemImpl implements BankSystem {
     @Override
     public void paySalary(User user) {
         double b;
-        user.setBalance(b = user.getBalance() + user.getSalary());
+        b = user.getBalance() + user.getSalary();
+        user.setBalance(b);
         System.out.println("paySalary " + b);
     }
 }
